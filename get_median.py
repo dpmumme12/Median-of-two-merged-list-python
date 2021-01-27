@@ -1,16 +1,14 @@
 def get_median(list1 , list2):
     nums_list = list1 + list2
-    for x in range(len(nums_list)):
-        for y in range(len(nums_list)):
-            n = nums_list[x]
-            try:
-                if nums_list[y]> nums_list[x]:
-                    nums_list[x] = nums_list[y]
-                    nums_list[y] = n
-                else:
-                    pass
-            except:
-                pass
+
+    #Uses bubble sort to sort the list
+    for x in range(len(nums_list) - 1, 0, -1):
+        for y in range(0, x):
+            
+            if nums_list[y] > nums_list[y + 1]:
+                temp = nums_list[y+1]
+                nums_list[y+1] = nums_list[y]
+                nums_list[y] = temp
 
     x = len(nums_list)
     if (x % 2) == 0:
